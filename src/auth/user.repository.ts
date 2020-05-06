@@ -40,7 +40,7 @@ export class UserRepository extends Repository<User> {
             username,
         });
 
-        if (user && await user.validatePassword()) {
+        if (user && await user.validatePassword(password)) {
             return user.username;
         }
 
